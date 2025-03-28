@@ -26,24 +26,28 @@ document.addEventListener("DOMContentLoaded", function () {
     const galleryItems = document.querySelectorAll(".gallery-item");
 
     galleryItems.forEach(item => {
+        const description = item.querySelector(".image-description");
+
         item.addEventListener("click", function (event) {
-            // Hide all descriptions first (for mobile behavior)
-            document.querySelectorAll(".gallery-item").forEach(gallery => {
-                gallery.classList.remove("active");
-            });
+            // Hide all descriptions first
+            hideAllDescriptions();
 
-            // Toggle active class for clicked item (for mobile)
-            this.classList.add("active");
+            // Show the clicked item's description
+            description.style.display = "block";
 
-            event.stopPropagation(); // Prevent hiding immediately
-            }
+            event.stopPropagation(); // Prevent hiding when clicking on the item
         });
     });
 
-    // Hide descriptions when clicking anywhere else on the page (for mobile)
+    // Hide descriptions when clicking anywhere else on the page
     document.addEventListener("click", function () {
-        document.querySelectorAll(".gallery-item").forEach(gallery => {
-            gallery.classList.remove("active");
-        });
+        hideAllDescriptions();
     });
+
+    // Function to hide all image descriptions
+    function hideAllDescriptions() {
+        document.querySelectorAll(".image-description").forEach(desc => {
+            desc.style.display = "none";
+        });
+    }
 });
