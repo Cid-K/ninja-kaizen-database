@@ -1,6 +1,6 @@
 .back-button {
     position: fixed;
-    all: unset;
+    all: unset !important;
     bottom: 20px;
     right: 20px;
     background-color: #f04e30;
