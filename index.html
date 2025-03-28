@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="css/style.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ninja Kaizen Database</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
+
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Ninja Kaizen Database</h1>
+        <nav>
+            <ul>
+                
+                <li><a href="features.html">Game Features</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <section class="overview" style="color: black;">
+    <h2>Welcome to Ninja Kaizen Database</h2>
+    <p>Explore the world of Ninja Kaizen, get the latest updates on ongoing events, and share your feedback!</p>
+</section>
+
+<section class="events" style="color: black;">
+    <h3>Ongoing Events</h3>
+    <ul id="event-list">
+        <!-- Events will be dynamically added here via JavaScript -->
+    </ul>
+</section>
+
+<section class="comments" style="color: black;">
+    <h3>Leave a Comment</h3>
+    <form id="comment-form">
+        <textarea id="comment-text" placeholder="Leave a comment..." required></textarea>
+        <button type="submit">Submit</button>
+    </form>
+    <div id="comment-display">
+        <!-- Comments will appear here -->
+    </div>
+</section>
+
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 Ninja Kaizen Database. All rights reserved.</p><br>Created by Oiᴎos Meℓi. A.K.A. Donald Trump
+    </footer>
+
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
+    <script src="js/script.js"></script>
+
+
+</body>
+</html>
