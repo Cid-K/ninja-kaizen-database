@@ -32,8 +32,9 @@ document.addEventListener("DOMContentLoaded", function () {
             // Hide all descriptions first
             hideAllDescriptions();
 
-            // Show the clicked item's description
-            description.style.display = "block";
+            // Show the clicked item's description with smooth transition
+            description.style.opacity = "1";
+            description.style.visibility = "visible";
 
             event.stopPropagation(); // Prevent hiding when clicking on the item
         });
@@ -44,10 +45,11 @@ document.addEventListener("DOMContentLoaded", function () {
         hideAllDescriptions();
     });
 
-    // Function to hide all image descriptions
+    // Function to hide all image descriptions smoothly
     function hideAllDescriptions() {
         document.querySelectorAll(".image-description").forEach(desc => {
-            desc.style.display = "none";
+            desc.style.opacity = "0";
+            desc.style.visibility = "hidden";
         });
     }
 });
