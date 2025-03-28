@@ -11,10 +11,10 @@
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
-    z-index: 9999;
-    display: inline-block; /* Ensures it doesn't stretch */
-    width: auto; /* Prevents full-page width */
-    height: auto; /* Prevents full-page height */
+    z-index: 9999 !important;
+    display: inline-block !important; /* Ensures it doesn't stretch */
+    width: auto !important; /* Prevents full-page width */
+    height: auto !important; /* Prevents full-page height */
     text-align: center; /* Centers text inside */
     line-height: normal; /* Fixes height expansion issue */
 }
