@@ -1,5 +1,5 @@
 .back-button {
-    position: fixed;
+    position: fixed !important;
     all: unset !important;
     bottom: 20px;
     right: 20px;
