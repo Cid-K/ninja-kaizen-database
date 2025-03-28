@@ -3,19 +3,19 @@
     all: unset !important;
     bottom: 20px !important;
     right: 20px !important;
-    background-color: #f04e30;
-    color: white;
+    background-color: #f04e30 !important;
+    color: white !important;
     padding: 12px 20px !important;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
+    border: none !important;
+    border-radius: 5px !important;
+    font-size: 16px !important;
+    font-weight: bold !important;
+    cursor: pointer !important;
     z-index: 9999 !important;
     display: inline-block !important; /* Ensures it doesn't stretch */
     width: auto !important; /* Prevents full-page width */
     height: auto !important; /* Prevents full-page height */
-    text-align: center; /* Centers text inside */
+    text-align: center !important; /* Centers text inside */
     line-height: normal !important; /* Fixes height expansion issue */
 }
 
