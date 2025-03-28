@@ -1,27 +1,30 @@
-<body>
-<button onclick="goHome()" class="back-button">← Back to Homepage</button>
-
 .back-button {
     position: fixed !important;
+    all: unset !important;
     bottom: 20px !important;
     right: 20px !important;
-    background-color: #f04e30;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
+    background-color: #f04e30 !important;
+    color: white !important;
+    padding: 12px 20px !important;
+    border: none !important;
+    border-radius: 5px !important;
+    font-size: 16px !important;
+    font-weight: bold !important;
+    cursor: pointer !important;
     z-index: 9999 !important;
-display: block !important;
+    display: inline-block !important; /* Ensures it doesn't stretch */
+    width: auto !important; /* Prevents full-page width */
+    height: auto !important; /* Prevents full-page height */
+    text-align: center !important; /* Centers text inside */
+    line-height: normal !important; /* Fixes height expansion issue */
 }
 
 .back-button:hover {
-    background-color: #c03e28;
+    background-color: #c03e28 !important;
 }
 
 
+/* Centering Page Content */
 body {
     display: flex;
     flex-direction: column;
@@ -29,10 +32,35 @@ body {
     justify-content: center;
     min-height: 100vh;
     margin: 0;
-    text-align: center; /* Center text content */
+    text-align: center;
     font-family: Arial, sans-serif;
+    background-image: url("../images/background.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    color: white; /* Default text color */
 }
 
+/* Dark overlay effect */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    z-index: -1;
+}
+
+/* Ensure headers and text elements are white */
+h1, h2, h3, p, a {
+    color: white;
+}
+
+/* Sections */
 header, footer {
     width: 100%;
     text-align: center;
@@ -42,7 +70,7 @@ header, footer {
 }
 
 .overview, .events, .comments {
-    width: 60%; /* Adjust width as needed */
+    width: 60%;
     background-color: #f9f9f9;
     padding: 20px;
     margin: 20px 0;
@@ -50,6 +78,20 @@ header, footer {
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Change specific text sections to black */
+.overview h2,
+.overview p,
+.events h3,
+.events ul,
+.comments h3,
+.comments form,
+.comments textarea,
+.comments button,
+#comment-display {
+    color: black !important;
+}
+
+/* Comments Section */
 #comment-form textarea {
     width: 100%;
     height: 80px;
@@ -57,6 +99,7 @@ header, footer {
     padding: 10px;
 }
 
+/* Buttons */
 button {
     background-color: #007bff;
     color: white;
@@ -69,105 +112,24 @@ button:hover {
     background-color: #0056b3;
 }
 
-
-
-/* Apply background to the entire page */
-body {
-    background-image: url("../images/background.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    position: relative;
-}
-
-body::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Adjust darkness (0.5 = 50% dark) */
-    backdrop-filter: blur(10px); /* Adjust blur strength */
-    z-index: -1;
-}
-
-body {
-    color: white; /* Makes all text white */
-align-items: center;
-}
-
-h1, h2, h3, p, a {
-    color: white; /* Ensures all headers, paragraphs, and links are white */
-}
-
-/* General Body Font */
-body {
-    font-size: 16px; /* Default text size */
-    font-family: "Arial", sans-serif; /* Change the font family if needed */
-}
-
-/* Headings */
-h1 {
-    font-size: 40px; /* Main title */
-    font-weight: bold;
-}
-
-h2 {
-    font-size: 35px; /* Section titles */
-}
-
-h3 {
-    font-size: 35px; /* Feature titles */
-}
-
-/* Paragraphs and Descriptions */
-p {
-    font-size: 18px; /* Standard text */
-    line-height: 1.5; /* Improves readability */
-}
-
-/* Image Description on Hover */
-.image-description {
-    font-size: 16px;
-}
-
-/* Navigation Links */
-nav ul li a {
-    font-size: 20px;
-    font-weight: bold;
-}
-
-
-/* Ensure Images Are Aligned */
+/* Image Gallery Layout */
 .feature-gallery {
     display: flex;
     flex-wrap: wrap;
-    gap: 5px; /* Adjust spacing between images */
+    gap: 10px;
     justify-content: left;
-overflow: visible; /* Ensure nothing is hidden */
 }
 
 /* Each Gallery Item */
 .gallery-item {
-    width: 80px; /* Set a fixed width */
-    height: 80px; /* Set a fixed height */
+    width: 80px; /* Set a consistent width */
+    height: 80px; /* Set a consistent height */
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: left;
-    border: 0px solid #ccc;
-    padding: 0px;
-    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.1);
-    background-color: light blue;
-position: relative;
-    overflow: visible;
-}
-
-/* Prevent text overflow when near the left edge */
-.gallery-item:first-child .image-description {
-    left: auto;
-    right: 100%; /* Moves text to the left instead when near the edge */
+    position: relative;
+    overflow: visible; /* Ensure nothing is hidden */
 }
 
 /* Image Styling */
@@ -186,7 +148,8 @@ position: relative;
 
 /* Image Description (Initially Hidden) */
 .image-description {
-       position: absolute;
+    display: none; /* Hide by default */
+    position: absolute;
     top: 50%;
     left: 100%; /* Default position (right of image) */
     transform: translateY(-50%);
@@ -200,7 +163,7 @@ position: relative;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease-in-out;
-    z-index: 999;
+    z-index: 9999;
     white-space: normal;
 }
 
@@ -208,44 +171,31 @@ position: relative;
 .gallery-item:hover .image-description {
     opacity: 1;
     visibility: visible;
-left: 100%;
+    display: block;
+    left: 100%; /* Keeps it positioned to the right */
 }
 
+/* Fix Description Positioning Near Edges */
+.gallery-item:first-child .image-description {
+    left: auto;
+    right: 100%;
+}
+
+/* Back Button Alternative Styling */
 .back-button {
-    background-color: #333; /* Dark background */
-    color: white; /* White text */
+    background-color: #333;
+    color: white;
     border: none;
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
     border-radius: 5px;
-    position: absolute;
+    position: fixed;
     top: 20px;
     left: 20px;
     transition: background 0.3s ease;
 }
-.overview h2,
-.overview p,
-.events h3,
-.events ul,
-.comments h3,
-.comments form,
-.comments textarea,
-.comments button,
-#comment-display {
-    color: black !important;
-}
-
 
 .back-button:hover {
-    background-color: #555; /* Slightly lighter when hovered */
+    background-color: #555;
 }
-<script>
-    function goHome() {
-        window.location.href = "index.html"; // Change this if your homepage filename is different
-    }
-</script>
-
-</body>
-
-
