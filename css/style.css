@@ -5,7 +5,7 @@
     right: 20px !important;
     background-color: #f04e30;
     color: white;
-    padding: 12px 20px;
+    padding: 12px 20px !important;
     border: none;
     border-radius: 5px;
     font-size: 16px;
